@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.widget.CardView
-    android:id="@+id/device_card"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/device_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_small"
-    card_view:cardPreventCornerOverlap="false"
-    card_view:cardUseCompatPadding="true"
     card_view:cardElevation="@dimen/elevation_normal"
-    >
+    card_view:cardPreventCornerOverlap="false"
+    card_view:cardUseCompatPadding="true">
 
 
     <LinearLayout
@@ -19,11 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white_primary"
-        android:padding="@dimen/margin_standard"
         android:divider="@drawable/divider"
-        android:showDividers="middle"
         android:orientation="horizontal"
-        >
+        android:padding="@dimen/margin_standard"
+        android:showDividers="middle">
 
         <TextView
             android:id="@+id/device_heading"
@@ -31,14 +28,13 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textAppearance="@style/TextHeadline"
-            tools:text="Device"
-            />
+            android:textColor="@android:color/black"
+            tools:text="Device" />
 
         <RelativeLayout
             android:id="@+id/person_container_primary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/device_awesome_heading"
@@ -47,19 +43,19 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:textAppearance="@style/TextSubheading"
-                tools:text="Awesomeness"
-                />
+                android:textColor="@android:color/black"
+                tools:text="Awesomeness" />
 
             <TextView
                 android:id="@+id/device_awesome_rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_below="@id/device_awesome_heading"
+                android:gravity="center"
                 android:singleLine="true"
                 android:textAppearance="@style/TextBody1"
-                tools:text="50"
-                />
+                android:textColor="@android:color/black"
+                tools:text="50" />
 
         </RelativeLayout>
 

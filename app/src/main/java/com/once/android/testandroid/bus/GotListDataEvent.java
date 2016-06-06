@@ -1,5 +1,6 @@
 package com.once.android.testandroid.bus;
 
+import com.once.android.testandroid.model.pojo.Item;
 import com.once.android.testandroid.model.pojo.Person;
 
 import java.util.List;
@@ -12,8 +13,8 @@ public class GotListDataEvent extends BaseNetworkEvent {
     public static final Error FAILED = new OnError(UNHANDLED_CODE, UNHANDLED_MSG);
 
 
-    public static class OnCompleted extends Completed<List<Person>> {
-        public OnCompleted(List<Person> result) {
+    public static class OnCompleted extends Completed<List<Item>> {
+        public OnCompleted(List<Item> result) {
             super(result);
         }
     }

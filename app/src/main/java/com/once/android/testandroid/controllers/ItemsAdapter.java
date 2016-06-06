@@ -9,13 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.once.android.testandroid.R;
+import com.once.android.testandroid.model.pojo.Item;
 import com.once.android.testandroid.model.pojo.Person;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Adapter containing items.
@@ -26,77 +24,82 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecyclerView
     private Context context;
 
     // Data set
-    private List<Person> people;
-
-    // Item layout
-    private int itemLayout;
-
+    private List<Item> items;
 
     /**
      * Constructor
      */
-    public ItemsAdapter(Context context, List<Person> people, int itemLayout) {
+    public ItemsAdapter(Context context, List<Item> items) {
         this.context = context;
-        this.people = people;
-        this.itemLayout = itemLayout;
+        this.items = items;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        Item item = items.get(position);
+        if (item.getName() != null) {
+            return R.layout.person_item;
+        } else {
+            return R.layout.device_item;
+        }
+    }
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View mView = inflater.inflate(itemLayout, parent, false);
-
+        View mView = inflater.inflate(viewType, parent, false);
         return new RecyclerViewHolder(mView);
     }
 
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        Person person = people.get(position);
+        Item item = items.get(position);
+        if (item.getName() != null) {
+            // Add text
+            ((TextView) holder.mView.findViewById(R.id.person_name)).setText(item.getName());
+            String age = context.getString(R.string.main_age_label) + " " + String.valueOf(item.getAge());
+            ((TextView) holder.mView.findViewById(R.id.person_age)).setText(age);
 
-        // Add text
-        holder.personName.setText(person.getNames());
-        String age = context.getString(R.string.main_age_label) + " " + String.valueOf(person.getAge());
-        holder.personAge.setText(age);
-
-        // Load image
-        Picasso.with(context)
-                .load(person.getPicture_url())
-                .placeholder(R.color.accent)
-                .into(holder.personImage);
-
+            // Load image
+            Picasso.with(context)
+                    .load(item.getPicture_url())
+                    .placeholder(R.color.accent)
+                    .into(((ImageView) holder.mView.findViewById(R.id.person_image)));
+        } else {
+            //you are a device
+            //TODO
+            ((TextView) holder.mView.findViewById(R.id.device_heading)).setText(item.getDevice_name());
+            ((TextView) holder.mView.findViewById(R.id.device_awesome_heading)).setText(item.getBrand());
+            ((TextView) holder.mView.findViewById(R.id.device_awesome_rating)).setText("" + item.getAwesomeness());
+        }
     }
 
 
     @Override
     public int getItemCount() {
-        return people.size();
+        return items.size();
     }
 
 
     /**
      * Update data
      */
-    public void updateDataSet(List<Person> mDataSet) {
+    public void updateDataSet(List<Item> mDataSet) {
         if (mDataSet == null)
             return;
 
-        this.people = mDataSet;
+        this.items = mDataSet;
         notifyDataSetChanged();
     }
 
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         protected View mView;
-        @Bind(R.id.person_image) ImageView personImage;
-        @Bind(R.id.person_name) TextView personName;
-        @Bind(R.id.person_age) TextView personAge;
 
         public RecyclerViewHolder(View v) {
             super(v);
             this.mView = v;
-            ButterKnife.bind(this, v);
         }
     }
 

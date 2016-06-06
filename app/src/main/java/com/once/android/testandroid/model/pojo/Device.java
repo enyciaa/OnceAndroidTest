@@ -3,7 +3,7 @@ package com.once.android.testandroid.model.pojo;
 /**
  * POJO with people data
  */
-public class Device {
+public class Device extends Item{
 
     private String device_name;
     private String brand;

@@ -1,5 +1,7 @@
 package com.once.android.testandroid.model.api;
 
+import com.once.android.testandroid.model.pojo.ItemsListResult;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -18,6 +20,6 @@ public interface APIInterface {
 
 
     @GET("2hjg2/")
-    Call<ResponseBody> getListData();
+    Call<ItemsListResult> getListData();
 
 }

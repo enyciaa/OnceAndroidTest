@@ -3,17 +3,17 @@ package com.once.android.testandroid.model.pojo;
 /**
  * POJO with people data
  */
-public class Person {
+public class Person extends Item {
 
     private String names;
     private String picture_url;
     private int age;
 
-    public String getNames() {
+    public String getName() {
         return names;
     }
 
-    public void setNames(String names) {
+    public void setName(String names) {
         this.names = names;
     }
 

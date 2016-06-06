@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.once.android.testandroid.R;
 import com.once.android.testandroid.bus.BusProvider;
 import com.once.android.testandroid.bus.VariableEvent;
-import com.once.android.testandroid.model.PeopleAndDevicesModel;
+import com.once.android.testandroid.model.ItemModel;
 import com.once.android.testandroid.model.Session;
+import com.once.android.testandroid.model.pojo.Item;
 import com.once.android.testandroid.model.pojo.Person;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Data model
      */
-    private PeopleAndDevicesModel peopleAndDevicesModel;
+    private ItemModel peopleAndDevicesModel;
 
 
     @Override
@@ -75,16 +75,16 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Set data for the list
      */
-    private void setListData(List<Person> people) {
+    private void setListData(List<Item> items) {
         if (recyclerView.getAdapter() == null) {
             // Add adapter
-            ItemsAdapter adapter = new ItemsAdapter(this, people, R.layout.person_item);
+            ItemsAdapter adapter = new ItemsAdapter(this, items);
             recyclerView.setAdapter(adapter);
         }
         else {
             // Update adapter
             ItemsAdapter adapter = (ItemsAdapter) recyclerView.getAdapter();
-            adapter.updateDataSet(people);
+            adapter.updateDataSet(items);
         }
     }
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Subscribe
     public void listDataUpdated(VariableEvent.OnPeopleUpdated onVariableChanged) {
-        setListData(peopleAndDevicesModel.getPeople());
+        setListData(peopleAndDevicesModel.getItems());
     }
 
 }
