@@ -1,6 +1,82 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+
+    <!--
+        TEXT SIZES
+        LATIN CHARACTERS
+        https://www.google.com/design/spec/style/typography.html
+    -->
+    <dimen name="txt_display_4">112sp</dimen>
+    <dimen name="txt_display_3">56sp</dimen>
+    <dimen name="txt_display_2">45sp</dimen>
+    <dimen name="txt_display_1">34sp</dimen>
+    <dimen name="txt_headline">24sp</dimen>
+    <dimen name="txt_title">20sp</dimen>
+    <dimen name="txt_subheading">16sp</dimen>
+    <dimen name="txt_btns">14sp</dimen>
+    <dimen name="txt_body">14sp</dimen>
+    <dimen name="txt_caption">12sp</dimen>
+    <dimen name="txt_chip">13sp</dimen>
+
+
+    <!--
+        LEADING SPACES FOR TEXT
+        LATIN CHARACTERS
+        https://www.google.com/design/spec/style/typography.html
+    -->
+    <dimen name="txt_leading_display_2">48sp</dimen>
+    <dimen name="txt_leading_display_1">40sp</dimen>
+    <dimen name="txt_leading_headline">32sp</dimen>
+    <dimen name="txt_leading_sub_heading_1">28sp</dimen>
+    <dimen name="txt_leading_sub_heading_2">24sp</dimen>
+    <dimen name="txt_leading_body_1">24sp</dimen>
+    <dimen name="txt_leading_body_2">20sp</dimen>
+
+
+    <!-- MARGINS & GUTTERS-->
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="gutter_standard">16dp</dimen>
+    <dimen name="margin_left_with_icon">72dp</dimen>
+    <dimen name="margin_right_with_icon">32dp</dimen>
+    <dimen name="margin_btn_with_drawable">8dp</dimen>
+    <dimen name="margin_divider">16dp</dimen>
+
+
+    <!-- PADDING-->
+    <dimen name="padding_chip">12dp</dimen>
+
+
+    <!-- WIDTHS & HEIGHTS -->
+    <dimen name="sizing_max_column_width">480dp</dimen>
+    <dimen name="sizing_max_column_width_with_icon">408dp</dimen>
+    <dimen name="sizing_min_btn_height">48dp</dimen>
+    <dimen name="sizing_dialog_max_width">440dp</dimen>
+    <dimen name="sizing_small_row_height">48dp</dimen>
+    <dimen name="sizing_status_bar_height">25dp</dimen>
+    <dimen name="sizing_chip_height">32dp</dimen>
+    <dimen name="sizing_chip_radius">16dp</dimen>
+    <dimen name="sizing_divider">1dp</dimen>
+    <dimen name="sizing_circular_image_border">2dp</dimen>
+
+
+    <!-- ELEVATION -->
+    <dimen name="elevation_low">4dp</dimen>
+    <dimen name="elevation_normal">8dp</dimen>
+    <dimen name="elevation_high">12dp</dimen>
+
+
+    <!-- SPACING -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">32dp</dimen>
+
+    <!--
+    ********************
+        OVERRIDES
+    ********************
+     -->
+    <!-- MAIN -->
+    <dimen name="main_person_size">72dp</dimen>
+    <dimen name="main_delete_btn_size">24dp</dimen>
+
 </resources>

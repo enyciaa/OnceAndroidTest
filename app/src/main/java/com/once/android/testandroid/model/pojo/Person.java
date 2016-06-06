@@ -1,9 +1,9 @@
-package com.once.android.testandroid.datamodel;
+package com.once.android.testandroid.model.pojo;
 
 /**
  * POJO with people data
  */
-public class People {
+public class Person {
 
     private String names;
     private String picture_url;

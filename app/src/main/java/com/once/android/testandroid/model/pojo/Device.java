@@ -1,4 +1,4 @@
-package com.once.android.testandroid.datamodel;
+package com.once.android.testandroid.model.pojo;
 
 /**
  * POJO with people data

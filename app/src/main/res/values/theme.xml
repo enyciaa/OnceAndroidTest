@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
+        <!-- COLORS -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <!-- WINDOW -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- TEXT COLORS -->
+        <item name="android:editTextColor">@color/white_primary</item>
+        <item name="android:textColorHint">@color/white_secondary</item>
+        <item name="android:textColorPrimary">@color/white_secondary</item>
+        <item name="android:textColorSecondary">@color/white_disabled</item>
+        <item name="android:textColorTertiary">@color/white_disabled</item>
+        <item name="android:textColorPrimaryInverse">@color/black_primary</item>
+        <item name="android:textColorSecondaryInverse">@color/black_secondary</item>
+        <item name="android:textColorTertiaryInverse">@color/black_disabled</item>
+
+    </style>
+
+</resources>

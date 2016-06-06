@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_container_primary"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.once.android.testandroid.MainActivity">
+    tools:context=".controllers.MainActivity"
+    >
 
-    <android.support.design.widget.AppBarLayout
+    <!-- LIST OF PEOPLE AND DEVICES -->
+    <LinearLayout
+        android:id="@+id/list_people_container_primary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+        tools:context=".controllers.MainActivity"
+        tools:showIn="@layout/activity_main"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_people_recycler"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/person_item"
+            />
 
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<inset
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="@dimen/margin_divider"
+    android:insetRight="@dimen/margin_divider" >
+
+    <shape
+        android:shape="rectangle">
+        <size
+            android:width="@dimen/sizing_divider"
+            android:height="@dimen/sizing_divider" />
+        <solid android:color="@color/black_dividers" />
+    </shape>
+
+</inset>

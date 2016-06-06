@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <!-- BRANDING COLORS -->
+    <color name="primary">#303f9f</color>
+    <color name="primary_dark">#283593</color>
+    <color name="primary_light">#7986CB</color>
+
+    <color name="accent">#1565c0</color>
+    <color name="accent_light">#90CAF9</color>
+
+
+    <!--
+    Whites
+    100% - Text/Icons
+    70% - Secondary Text
+    30% - Disabled / Hint Text
+    12% - Dividers
+    -->
+    <color name="white_primary">#ffffff</color>
+    <color name="white_secondary">#B3ffffff</color>
+    <color name="white_disabled">#4Dffffff</color>
+    <color name="white_dividers">#1Fffffff</color>
+
+
+    <!--
+    Blacks
+    87% - Text/Icons
+    54% - Secondary Text
+    26% - Disabled / Hint Text
+    12% - Dividers
+    -->
+    <color name="black_primary">#B3000000</color>
+    <color name="black_secondary">#8A000000</color>
+    <color name="black_disabled">#42000000</color>
+    <color name="black_dividers">#1F000000</color>
+
 </resources>
