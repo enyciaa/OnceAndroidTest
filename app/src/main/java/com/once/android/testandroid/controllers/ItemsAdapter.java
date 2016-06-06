@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.once.android.testandroid.R;
 import com.once.android.testandroid.model.pojo.Item;
-import com.once.android.testandroid.model.pojo.Person;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
