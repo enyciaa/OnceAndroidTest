@@ -55,7 +55,7 @@
     <dimen name="sizing_status_bar_height">25dp</dimen>
     <dimen name="sizing_chip_height">32dp</dimen>
     <dimen name="sizing_chip_radius">16dp</dimen>
-    <dimen name="sizing_divider">1dp</dimen>
+    <dimen name="sizing_divider">2dp</dimen>
     <dimen name="sizing_circular_image_border">2dp</dimen>
 
 

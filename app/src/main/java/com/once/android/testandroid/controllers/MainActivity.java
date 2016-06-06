@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.once.android.testandroid.R;
 import com.once.android.testandroid.bus.BusProvider;
@@ -11,7 +12,6 @@ import com.once.android.testandroid.bus.VariableEvent;
 import com.once.android.testandroid.model.ItemModel;
 import com.once.android.testandroid.model.Session;
 import com.once.android.testandroid.model.pojo.Item;
-import com.once.android.testandroid.model.pojo.Person;
 
 import org.greenrobot.eventbus.Subscribe;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Data model
      */
-    private ItemModel peopleAndDevicesModel;
+    private ItemModel itemModel;
 
 
     @Override
@@ -46,15 +46,12 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // Get models
-        peopleAndDevicesModel = Session.INSTANCE.getPeopleAndDevicesModel();
+        itemModel = Session.INSTANCE.getItemModel();
 
         // Build list
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-
-        // Get data
-        peopleAndDevicesModel.getListData();
     }
 
 
@@ -62,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         BusProvider.INSTANCE.getBus().register(this);
+        itemModel.getListData();
     }
 
 
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Subscribe
     public void listDataUpdated(VariableEvent.OnPeopleUpdated onVariableChanged) {
-        setListData(peopleAndDevicesModel.getItems());
+        setListData(itemModel.getItems());
     }
 
 }

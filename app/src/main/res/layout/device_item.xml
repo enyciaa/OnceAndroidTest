@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textAppearance="@style/TextHeadline"
-            android:textColor="@android:color/black"
-            tools:text="Device" />
+            tools:text="Device"
+            />
 
         <RelativeLayout
             android:id="@+id/person_container_primary"
@@ -43,8 +43,8 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:textAppearance="@style/TextSubheading"
-                android:textColor="@android:color/black"
-                tools:text="Awesomeness" />
+                tools:text="Awesomeness"
+                />
 
             <TextView
                 android:id="@+id/device_awesome_rating"
@@ -54,8 +54,8 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:textAppearance="@style/TextBody1"
-                android:textColor="@android:color/black"
-                tools:text="50" />
+                tools:text="50"
+                />
 
         </RelativeLayout>
 

@@ -40,7 +40,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margin_standard"
-            tools:src="@drawable/ic_indeterminate_check_box_black_24dp"
+            android:src="@drawable/ic_indeterminate_check_box_black_24dp"
             />
 
         <TextView
@@ -50,7 +50,6 @@
             android:layout_toRightOf="@id/person_image"
             android:layout_toLeftOf="@id/person_delete_btn"
             android:singleLine="true"
-            android:textColor="@android:color/black"
             android:textAppearance="@style/TextSubheading"
             tools:text="Name"
             />
@@ -62,7 +61,6 @@
             android:layout_toRightOf="@id/person_image"
             android:layout_toLeftOf="@id/person_delete_btn"
             android:layout_below="@id/person_name"
-            android:textColor="@android:color/black"
             android:singleLine="true"
             android:textAppearance="@style/TextBody1"
             tools:text="Age: 25"

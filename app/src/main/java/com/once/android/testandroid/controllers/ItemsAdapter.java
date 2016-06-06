@@ -5,10 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.once.android.testandroid.R;
+import com.once.android.testandroid.model.ItemModel;
+import com.once.android.testandroid.model.Session;
 import com.once.android.testandroid.model.pojo.Item;
 import com.squareup.picasso.Picasso;
 
@@ -52,9 +55,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecyclerView
 
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
         Item item = items.get(position);
         if (item.getName() != null) {
+            // You are a person
             // Add text
             ((TextView) holder.mView.findViewById(R.id.person_name)).setText(item.getName());
             String age = context.getString(R.string.main_age_label) + " " + String.valueOf(item.getAge());
@@ -65,9 +69,17 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecyclerView
                     .load(item.getPicture_url())
                     .placeholder(R.color.accent)
                     .into(((ImageView) holder.mView.findViewById(R.id.person_image)));
+
+            // Click listener
+            ((ImageButton) holder.mView.findViewById(R.id.person_delete_btn)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    deleteItem(position);
+                }
+            });
+
         } else {
             //you are a device
-            //TODO
             ((TextView) holder.mView.findViewById(R.id.device_heading)).setText(item.getDevice_name());
             ((TextView) holder.mView.findViewById(R.id.device_awesome_heading)).setText(item.getBrand());
             ((TextView) holder.mView.findViewById(R.id.device_awesome_rating)).setText("" + item.getAwesomeness());
@@ -90,6 +102,20 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.RecyclerView
 
         this.items = mDataSet;
         notifyDataSetChanged();
+    }
+
+
+    /**
+     * Delete item
+     */
+    public void deleteItem(int position) {
+        this.items.remove(position);
+
+        // Save data
+        ItemModel itemModel = Session.INSTANCE.getItemModel();
+        itemModel.saveItemsLocally(items);
+
+        notifyItemRemoved(position);
     }
 
 

@@ -12,14 +12,14 @@
         <item name="windowNoTitle">true</item>
 
         <!-- TEXT COLORS -->
-        <item name="android:editTextColor">@color/white_primary</item>
-        <item name="android:textColorHint">@color/white_secondary</item>
-        <item name="android:textColorPrimary">@color/white_secondary</item>
-        <item name="android:textColorSecondary">@color/white_disabled</item>
-        <item name="android:textColorTertiary">@color/white_disabled</item>
-        <item name="android:textColorPrimaryInverse">@color/black_primary</item>
-        <item name="android:textColorSecondaryInverse">@color/black_secondary</item>
-        <item name="android:textColorTertiaryInverse">@color/black_disabled</item>
+        <item name="android:editTextColor">@color/black_primary</item>
+        <item name="android:textColorHint">@color/black_primary</item>
+        <item name="android:textColorPrimary">@color/black_secondary</item>
+        <item name="android:textColorSecondary">@color/black_disabled</item>
+        <item name="android:textColorTertiary">@color/black_disabled</item>
+        <item name="android:textColorPrimaryInverse">@color/white_primary</item>
+        <item name="android:textColorSecondaryInverse">@color/white_secondary</item>
+        <item name="android:textColorTertiaryInverse">@color/white_disabled</item>
 
     </style>
 

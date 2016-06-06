@@ -10,14 +10,14 @@ public enum Session {
     INSTANCE;
 
     // Models
-    private ItemModel peopleAndDevicesModel;
+    private ItemModel itemModel;
 
 
-    public ItemModel getPeopleAndDevicesModel() {
-        if (peopleAndDevicesModel == null) {
-            peopleAndDevicesModel = new ItemModel();
+    public ItemModel getItemModel() {
+        if (itemModel == null) {
+            itemModel = new ItemModel();
         }
-        return peopleAndDevicesModel;
+        return itemModel;
     }
 
 }
